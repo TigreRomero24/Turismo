@@ -28,7 +28,10 @@ urlpatterns = [
     path('', inicio.as_view(), name='inicio'),
     path('admin/', admin.site.urls),
     path('historia/', historia.as_view(), name='historia'),
-
+    path('amazonia/', AmazoniaView.as_view(), name='amazonia'),
+    path('costa/', CostaView.as_view(), name='costa'),
+    path('galapagos/', GalapagosView.as_view(), name='galapagos'),
+    path('sierra/', SierraView.as_view(), name='sierra'),
 ]
 
 if settings.DEBUG:

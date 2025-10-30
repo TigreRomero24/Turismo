@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>
                         <a href="#">Destinos</a>
                         <ul>
-                            <li><a href="costa.html">Costa</a></li>
-                            <li><a href="sierra.html">Sierra</a></li>
-                            <li><a href="amazonia.html">Amazonía</a></li>
-                            <li><a href="galapagos.html">Galápagos</a></li>
+                            <li><a href="/costa">Costa</a></li>
+                            <li><a href="/sierra">Sierra</a></li>
+                            <li><a href="/amazonia">Amazonía</a></li>
+                            <li><a href="/galapagos">Galápagos</a></li>
                         </ul>
                     </li>
-                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="/historia">Historia</a></li>
                     <li><button id="btnRegister" class="login-btn"><i class="fas fa-user-plus"></i> Registrarse </button></li>
                     <li class="user-menu">
                         <button id="btnLogin" class="login-btn"><i class="fas fa-user"></i> Iniciar Sesión</button>
