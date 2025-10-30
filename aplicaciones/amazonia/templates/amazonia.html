@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Turismo en la Amazonía</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -20,9 +21,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/tena1.jpg" alt="1">
-                <img src="ima/tena2.jpg" alt="2">
-                <img src="ima/tena3.jpg" alt="3">
+                <img src="{% static 'img/tena1.jpg' %}" alt="1">
+                <img src="{% static 'img/tena2.jpg' %}" alt="2">
+                <img src="{% static 'img/tena3.jpg' %}" alt="3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -44,7 +45,7 @@
               <h4>🏢Hoteles recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/hotel-tena1.jpg" alt="Cotococha Amazon Lodge" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-tena1.jpg' %}" alt="Cotococha Amazon Lodge" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Cotococha Amazon Lodge</h3>
                     <p class="location">Remolino Latas, Km 10 Vía Ahuano, Tena, Ecuador, a orillas del río Napo.</p>
@@ -55,7 +56,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-tena2.jpg" alt="Hostería Las Heliconias" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-tena2.jpg' %}" alt="Hostería Las Heliconias" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hostería Las Heliconias</h3>
                     <p class="location">Avenida El Pana, km 1 1/2, a cinco minutos de la ciudad.</p>
@@ -66,7 +67,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-tena3.jpg" alt="Hotel Christian Resort" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-tena3.jpg' %}" alt="Hotel Christian Resort" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Christian Resort</h3>
                     <p class="location">En Misahuallí, en el sector de Kuyaloma, en Tena, provincia de Napo.</p>
@@ -80,7 +81,7 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/restaurant-tena1.jpeg" alt="Café Tortuga" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-tena1.jpeg' %}" alt="Café Tortuga" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Café Tortuga</h3>
                     <p class="location">Malecón de Tena, en la calle Francisco de Orellana.</p>
@@ -91,7 +92,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-tena2.webp" alt="Amazoonico" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-tena2.webp' %}" alt="Amazoonico" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Amazoonico</h3>
                     <p class="location">En el km 4 de la vía a Ahuano, en Campanacocha Dorado.</p>
@@ -102,7 +103,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-tena3.jpg" alt="Pizzería Los Lagos" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-tena3.jpg' %}" alt="Pizzería Los Lagos" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Pizzería Los Lagos</h3>
                     <p class="location">En el centro de la ciudad de Tena.</p>
@@ -131,9 +132,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/puyo.jpg" alt="1">
-                <img src="ima/puyo2.webp" alt="2">
-                <img src="ima/puyo3.jpg" alt="3">
+                <img src="{% static 'img/puyo.jpg' %}" alt="1">
+                <img src="{% static 'img/puyo2.webp' %}" alt="2">
+                <img src="{% static 'img/puyo3.jpg' %}" alt="3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -155,7 +156,7 @@
               <h4>🏢Hoteles recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/hotel-puyo1.webp" alt="El Jardín Hotel" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-puyo1.webp' %}" alt="El Jardín Hotel" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>El Jardín Hotel</h3>
                     <p class="location">barrio Obrero de Puyo, Ecuador, frente al río Puyo.</p>
@@ -166,7 +167,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-puyo2.jpg" alt="Hostería Turingia" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-puyo2.jpg' %}" alt="Hostería Turingia" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hostería Turingia</h3>
                     <p class="location">Ceslao Marín 294 y Javier Vargas, frente a la oficina de encomiendas de la Cooperativa Touris San Francisco.</p>
@@ -177,7 +178,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-puyo3.jpeg" alt="Hotel Ecológico Ruta de la Cascada" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-puyo3.jpeg' %}" alt="Hotel Ecológico Ruta de la Cascada" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Ecológico Ruta de la Cascada</h3>
                     <p class="location">Km 2 Via Puyo - Baños. Ruta de las Cascadas.</p>
@@ -191,7 +192,7 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/restaurant-puyo1.png" alt="Tradiciones Amazónicas" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-puyo1.png' %}" alt="Tradiciones Amazónicas" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Tradiciones Amazónicas</h3>
                     <p class="location">En la calle Río. Rivadeneira y Alberto Zambrano junto al Terminal Terrestre.</p>
@@ -202,7 +203,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-puyo2.jpg" alt="El Jardín Restaurante" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-puyo2.jpg' %}" alt="El Jardín Restaurante" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>El Jardín Restaurante</h3>
                     <p class="location">En el Barrio Obrero (Cruzando el puente colgante 45, Puyo)</p>
@@ -213,7 +214,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-puyo3.jpg" alt="Restaurante Las Cabañas" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-puyo3.jpg' %}" alt="Restaurante Las Cabañas" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Restaurante Las Cabañas</h3>
                     <p class="location">Se encuentra en la entrada al Puyo.</p>
@@ -242,9 +243,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/lago-agrio1.jpg" alt="1">
-                <img src="ima/lago-agrio2.webp" alt="2">
-                <img src="ima/lago-agrio3.jpg" alt="3">
+                <img src="{% static 'img/lago-agrio1.jpg' %}" alt="1">
+                <img src="{% static 'img/lago-agrio2.webp' %}" alt="2">
+                <img src="{% static 'img/lago-agrio3.jpg' %}" alt="3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -266,7 +267,7 @@
               <h4>🏢Hoteles recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/hotel-lago1.jpg" alt="Gran Hotel de Lago" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-lago1.jpg' %}" alt="Gran Hotel de Lago" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Gran Hotel de Lago</h3>
                     <p class="location">Está a tan solo 13 minutos a pie de Catedral de Lago Agrio y a 2 minutos a pie de Parque Turístico de Nueva Loja.</p>
@@ -277,7 +278,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-lago2.jpg" alt="Hotel Arazá" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-lago2.jpg' %}" alt="Hotel Arazá" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Arazá</h3>
                     <p class="location">En la vía a Quito y Guayaquil.</p>
@@ -288,7 +289,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-lago3.jpg" alt="Hotel D’Mario" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-lago3.jpg' %}" alt="Hotel D’Mario" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel D’Mario</h3>
                     <p class="location">Está situado en el corazón de la ciudad de Lago Agrio.</p>
@@ -302,7 +303,7 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/restaurant-lago1.jpeg" alt="Terraza Amazónica" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-lago1.jpeg' %}" alt="Terraza Amazónica" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Terraza Amazónica</h3>
                     <p class="location">En el quinto piso de un edificio en la intersección de la vía Quito y la avenida Progreso.</p>
@@ -313,7 +314,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-lago2.jpg" alt="Restaurante Picantería Típica" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-lago2.jpg' %}" alt="Restaurante Picantería Típica" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Restaurante Picantería Típica</h3>
                     <p class="location">En la vía a El Sacha, a 1 km del puente del Río Aguarico, margen izquierdo.</p>
@@ -324,7 +325,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-lago3.jpg" alt="El Manantial" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-lago3.jpg' %}" alt="El Manantial" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>El Manantial</h3>
                     <p class="location">km 65 de la vía Lago Agrio-Quito, a unos 5 minutos de la carretera principal, en el margen izquierdo.</p>
@@ -354,8 +355,8 @@
 <div id="modal-container"></div>
 
 </body>
-<script src="js/layout.js"></script>
-<script src="js/carrito.js"></script>
-<script src="js/login.js"></script>
-<script src="js/info-hoteles.js"></script>
+<script src="{% static 'js/layout.js' %}"></script>
+<script src="{% static 'js/carrito.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
+<script src="{% static 'js/info-hoteles.js' %}"></script>
 </html>

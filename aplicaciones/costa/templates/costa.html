@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Turismo en la Costa</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -21,9 +22,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/montañita1.webp" alt="Montañita">
-                <img src="ima/montañita2.jpg" alt="Montañita1">
-                <img src="ima/montañita3.jpg" alt="Montañita3">
+                <img src="{% static 'img/montañita1.webp' %}" alt="Montañita">
+                <img src="{% static 'img/montañita2.jpg' %}" alt="Montañita1">
+                <img src="{% static 'img/montañita3.jpg' %}" alt="Montañita3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -45,7 +46,7 @@
                 <h4>🏢Hoteles recomendados</h4>
                 <div class="container-card">
                   <div class="card-hotel">
-                    <img src="ima/hotel-montañita1.webp" alt="Dharma Beach Hotel" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-montañita1.webp' %}" alt="Dharma Beach Hotel" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Dharma Beach Hotel</h3>
                       <p class="location">Una cuadra de la playa</p>
@@ -56,7 +57,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/hotel-montañita2.webp" alt="ME Hotel in Montañita Estates" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-montañita2.webp' %}" alt="ME Hotel in Montañita Estates" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>ME Hotel in Montañita Estates</h3>
                       <p class="location"> Cerca de del Bar Sirenita</p>
@@ -67,7 +68,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/hotel-montañita3.jpg" alt="Selina Montañita" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-montañita3.jpg' %}" alt="Selina Montañita" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Selina Montañita</h3>
                       <p class="location">Diagonal al comercial Tia</p>
@@ -81,7 +82,7 @@
                 <h4>🍽️Restaurantes recomendados</h4>
                 <div class="container-card">
                   <div class="card-hotel">
-                    <img src="ima/restaurant-montañita1.jpg" alt="Tiki Limbo" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-montañita1.jpg' %}" alt="Tiki Limbo" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Tiki Limbo</h3>
                       <p class="location"> Cerca de del mar </p>
@@ -92,7 +93,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/restaurant-montañita2.webp" alt="Pigro Montañita" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-montañita2.webp' %}" alt="Pigro Montañita" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Pigro Montañita</h3>
                       <p class="location">Cerca del mar</p>
@@ -103,7 +104,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/restaurant-montañita3.jpg" alt="Shankha Sushi & Bar" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-montañita3.jpg' %}" alt="Shankha Sushi & Bar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Shankha Sushi & Bar</h3>
                       <p class="location">Cerca del mar</p>
@@ -132,9 +133,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/salinas1.jpg" alt="Salinas1">
-                <img src="ima/salinas2.jpeg" alt="Salinas2">
-                <img src="ima/salinas3.jpg" alt="Salinas3">
+                <img src="{% static 'img/salinas1.jpg' %}" alt="Salinas1">
+                <img src="{% static 'img/salinas2.jpeg' %}" alt="Salinas2">
+                <img src="{% static 'img/salinas3.jpg' %}" alt="Salinas3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -156,7 +157,7 @@
                 <h4>🏢Hoteles recomendados</h4>
                 <div class="container-card">
                   <div class="card-hotel">
-                    <img src="ima/hotel-salinas1.jpeg" alt="Barceló Salinas" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-salinas1.jpeg' %}" alt="Barceló Salinas" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Barceló Salinas</h3>
                       <p class="location">3 cuadra de la playa</p>
@@ -167,7 +168,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/hotel-salinas2.JPG" alt="Hostal Cocos" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-salinas2.JPG' %}" alt="Hostal Cocos" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hostal Cocos</h3>
                       <p class="location"> 2 cuadras del mar</p>
@@ -178,7 +179,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/hotel-salinas3.jpeg" alt="Blue Bay Hotel" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-salinas3.jpeg' %}" alt="Blue Bay Hotel" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Blue Bay Hotel</h3>
                       <p class="location">Diagonal al comercial Tia</p>
@@ -192,7 +193,7 @@
                 <h4>🍽️Restaurantes recomendados</h4>
                 <div class="container-card">
                   <div class="card-hotel">
-                    <img src="ima/restaurant-salinas1.webp" alt="Big Ralph’s" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-salinas1.webp' %}" alt="Big Ralph’s" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Big Ralph’s</h3>
                       <p class="location">A 150 metros de la playa </p>
@@ -203,7 +204,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/restaurant-salinas2.jpeg" alt="Mariscos Azul" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-salinas2.jpeg' %}" alt="Mariscos Azul" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Mariscos Azul</h3>
                       <p class="location">A 50 metros de la playa</p>
@@ -214,7 +215,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/restaurant-salinas3.jpeg" alt="Casa de Mar" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-salinas3.jpeg' %}" alt="Casa de Mar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Casa de Mar</h3>
                       <p class="location">A 50 mtros de la playa</p>
@@ -242,9 +243,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/Pueerto1.jpeg" alt="Puerto1">
-                <img src="ima/Pueerto2.jpg" alt="Puerto2">
-                <img src="ima/Pueerto3.jpeg" alt="Puerto3">
+                <img src="{% static 'img/Pueerto1.jpeg' %}" alt="Puerto1">
+                <img src="{% static 'img/Pueerto2.jpg' %}" alt="Puerto2">
+                <img src="{% static 'img/Pueerto3.jpeg' %}" alt="Puerto3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -266,7 +267,7 @@
                 <h4>🏢Hoteles recomendados</h4>
                 <div class="container-card">
                   <div class="card-hotel">
-                    <img src="ima/hotel-PuertoLopez1.jpg" alt="Hotel Piedra del Mar" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-PuertoLopez1.jpg' %}" alt="Hotel Piedra del Mar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hotel Piedra del Mar</h3>
                       <p class="location">Frente a la Playa</p>
@@ -277,7 +278,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/hotel-PuertoLopez2.jpg" alt="Hostería Mandála" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-PuertoLopez2.jpg' %}" alt="Hostería Mandála" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hostería Mandála</h3>
                       <p class="location">100 metros de la playa </p>
@@ -288,7 +289,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/hotel-PuertoLopez3.jpg" alt="Victor Hugo Hotel" class="card-hotel-img">
+                    <img src="{% static 'img/hotel-PuertoLopez3.jpg' %}" alt="Victor Hugo Hotel" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Victor Hugo Hotel</h3>
                       <p class="location">Con vista al mar</p>
@@ -302,7 +303,7 @@
                 <h4>🍽️Restaurantes recomendados</h4>
                 <div class="container-card">
                   <div class="card-hotel">
-                    <img src="ima/restaurant-PuertoLopez1.jpg" alt="Sabor Español" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-PuertoLopez1.jpg' %}" alt="Sabor Español" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Sabor Español</h3>
                       <p class="location">A 100 del muelle turístico </p>
@@ -313,7 +314,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/restaurant-PuertoLopez2.jpeg" alt="Bellitalia Puerto López" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-PuertoLopez2.jpeg' %}" alt="Bellitalia Puerto López" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Bellitalia Puerto López</h3>
                       <p class="location">A 150 metros del comercial Tia</p>
@@ -324,7 +325,7 @@
                     <button class="fav-btn">❤️</button>
                   </div>
                   <div class="card-hotel">
-                    <img src="ima/restaurant-salinas3.jpeg" alt="Café del Mar" class="card-hotel-img">
+                    <img src="{% static 'img/restaurant-salinas3.jpeg' %}" alt="Café del Mar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Café del Mar</h3>
                       <p class="location">En la palaya junto al bar Mar Azul</p>
@@ -354,8 +355,8 @@
 <div id="modal-container"></div>
 
 </body>
-<script src="js/layout.js"></script>
-<script src="js/carrito.js"></script>
-<script src="js/login.js"></script>
-<script src="js/info-hoteles.js"></script>
+<script src="{% static 'js/layout.js' %}"></script>
+<script src="{% static 'js/carrito.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
+<script src="{% static 'js/info-hoteles.js' %}"></script>
 </html>

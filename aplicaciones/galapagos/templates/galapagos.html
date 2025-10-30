@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Turismo en la Galápagos</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -20,9 +21,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/Isabela1.jpeg" alt="1">
-                <img src="ima/Isabela2.jpg" alt="2">
-                <img src="ima/Isabela3.jpg" alt="3">
+                <img src="{% static 'img/Isabela1.jpeg' %}" alt="1">
+                <img src="{% static 'img/Isabela2.jpg' %}" alt="2">
+                <img src="{% static 'img/Isabela3.jpg' %}" alt="3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -44,7 +45,7 @@
               <h4>🏢Hoteles recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/hotel-Isabela1.jpg" alt="Hotel Casa Blanca" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-Isabela1.jpg' %}" alt="Hotel Casa Blanca" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Casa Blanca</h3>
                     <p class="location">AV Los Flamingos y Puerto Villamil</p>
@@ -55,7 +56,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-Isabela2.jpg" alt="Arena Blanca Eco Hotel" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-Isabela2.jpg' %}" alt="Arena Blanca Eco Hotel" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Arena Blanca Eco Hotel</h3>
                     <p class="location">Av Antonio Gil y Pinguinos.</p>
@@ -66,7 +67,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-Isabela3.jpg" alt="Eco Hotel Katarma" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-Isabela3.jpg' %}" alt="Eco Hotel Katarma" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Eco Hotel Katarma</h3>
                     <p class="location">Avenida 16 de Marzo y los cactus barrio loja.</p>
@@ -80,7 +81,7 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/restaurant-isabela1.jpg" alt="Darwin's Secret" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-isabela1.jpg' %}" alt="Darwin's Secret" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Darwin's Secret</h3>
                     <p class="location">Antonio Gil S/N y, 16 de Marzo, Puerto Villamil 200250 Ecuador.</p>
@@ -91,7 +92,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-isabela2.jpg" alt="Post Office" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-isabela2.jpg' %}" alt="Post Office" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Post Office</h3>
                     <p class="location">Puerto Villamil.</p>
@@ -102,7 +103,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-isabela3.jpg" alt="EL DESCANSO Marinero" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-isabela3.jpg' %}" alt="EL DESCANSO Marinero" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>EL DESCANSO Marinero</h3>
                     <p class="location">AV Malecón y Petreles.</p>
@@ -131,9 +132,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/Isla-Cruz1.webp" alt="1">
-                <img src="ima/Isla-Cruz2.webp" alt="2">
-                <img src="ima/Isla-Cruz3.jpg" alt="3">
+                <img src="{% static 'img/Isla-Cruz1.webp' %}" alt="1">
+                <img src="{% static 'img/Isla-Cruz2.webp' %}" alt="2">
+                <img src="{% static 'img/Isla-Cruz3.jpg' %}" alt="3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -155,7 +156,7 @@
               <h4>🏢Hoteles recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/hotel-cruz1.jpg" alt="Hotel Ninfa" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-cruz1.jpg' %}" alt="Hotel Ninfa" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Ninfa</h3>
                     <p class="location">Colonos AV Charles Darwin.</p>
@@ -166,7 +167,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-cruz2.jpg" alt="Galapagos Morning Glory" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-cruz2.jpg' %}" alt="Galapagos Morning Glory" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Galapagos Morning Glory</h3>
                     <p class="location">Av Charles Darwin y Floreana.</p>
@@ -177,7 +178,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-cruz3.jpg" alt="Hotel Fiesta" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-cruz3.jpg' %}" alt="Hotel Fiesta" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Fiesta</h3>
                     <p class="location">AV Moises Brito y Puerto Ayora.</p>
@@ -191,7 +192,7 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/restaurant-cruz1.jpg" alt="Golden Prague Pub" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-cruz1.jpg' %}" alt="Golden Prague Pub" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Golden Prague Pub</h3>
                     <p class="location">AV Charles Darwin y Puerto Ayora.</p>
@@ -202,7 +203,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-cruz2.jpg" alt="Post Office" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-cruz2.jpg' %}" alt="Post Office" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Post Office</h3>
                     <p class="location">Av. Charles Darwin y Piqueros Dentro del hotel Galapagos Habitat Eco Luxury Hotel.</p>
@@ -213,7 +214,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-cruz3.jpg" alt="EL DESCANSO Marinero" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-cruz3.jpg' %}" alt="EL DESCANSO Marinero" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>EL DESCANSO Marinero</h3>
                     <p class="location">Barrio Punta Estrada Angermeyer Waterfront Inn.</p>
@@ -242,9 +243,9 @@
         <div class="card-content">
             <div class="carrusel-js">
               <div class="slides-js">
-                <img src="ima/Isla-Cristobal1.jpg" alt="1">
-                <img src="ima/Isla-Cristobal2.jpg" alt="2">
-                <img src="ima/Isla-Cristobal3.webp" alt="3">
+                <img src="{% static 'img/Isla-Cristobal1.jpg' %}" alt="1">
+                <img src="{% static 'img/Isla-Cristobal2.jpg' %}" alt="2">
+                <img src="{% static 'img/Isla-Cristobal3.webp' %}" alt="3">
               </div>
               <div class="nav-js">
                 <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -266,7 +267,7 @@
               <h4>🏢Hoteles recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/hotel-Cristobal1.jpg" alt="Hotel Casa Blanca" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-Cristobal1.jpg' %}" alt="Hotel Casa Blanca" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Casa Blanca</h3>
                     <p class="location">Avenida Charles darwin y Herman Melville.</p>
@@ -277,7 +278,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-Cristobal2.jpg" alt="Arena Blanca Eco Hotel" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-Cristobal2.jpg' %}" alt="Arena Blanca Eco Hotel" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Arena Blanca Eco Hotel</h3>
                     <p class="location">Avenida Quito y Avenida Tulcan.</p>
@@ -288,10 +289,10 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/hotel-Cristobal3.jpg" alt="Eco Hotel Katarma" class="card-hotel-img">
+                  <img src="{% static 'img/hotel-Cristobal3.jpg' %}" alt="Eco Hotel Katarma" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Eco Hotel Katarma</h3>
-                    <p class="location">AAlsacio Northia Avenue, San Cristobal.</p>
+                    <p class="location">Avenida Alsacio Northia, San Cristobal.</p>
                     <p class="rating">⭐ 9.3/10 <span class="review-count">(65)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price">$100 por noche<br><span class="total">($118 en total)</span></p>
@@ -302,7 +303,7 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="ima/restaurant-Cristobal1.jpg" alt="Darwin's Secret" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-Cristobal1.jpg' %}" alt="Darwin's Secret" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Darwin's Secret</h3>
                     <p class="location">Isabela Y Charles Darwin Manzana 40 Solar 13 Sector Playa De Oro.</p>
@@ -313,7 +314,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-Cristobal2.jpg" alt="Post Office" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-Cristobal2.jpg' %}" alt="Post Office" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Post Office</h3>
                     <p class="location">Av. Charles Darwin José de Villamil, Puerto Baquerizo Moreno.</p>
@@ -324,7 +325,7 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="ima/restaurant-Cristobal3.jpg" alt="El Descanso Marinero" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-Cristobal3.jpg' %}" alt="El Descanso Marinero" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>El Descanso Marinero</h3>
                     <p class="location">Calle Alsacio Northia y Espanola, Puerto Baquerizo Moreno.</p>
@@ -353,8 +354,8 @@
 <div id="modal-container"></div>
 
 </body>
-<script src="js/layout.js"></script>
-<script src="js/carrito.js"></script>
-<script src="js/login.js"></script>
-<script src="js/info-hoteles.js"></script>
+<script src="{% static 'js/layout.js' %}"></script>
+<script src="{% static 'js/carrito.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
+<script src="{% static 'js/info-hoteles.js' %}"></script>
 </html>
