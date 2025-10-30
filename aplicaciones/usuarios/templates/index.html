@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EcuTuris - Agencia de Turismo</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+<div id="header-container"></div>
+
+<main>
+  <section class="card">
+    <h2 class="titulo">Bienvenido a EcuTuris</h2>
+    <div class="carrusel-principal">
+      <div class="slides-principal">
+  <img src="{% static 'img/principal1.webp' %}" alt="1" class="img active">
+  <img src="{% static 'img/principal2.jpeg' %}" alt="2" class="img">
+  <img src="{% static 'img/principal3.jpeg' %}" alt="3" class="img">
+  <img src="{% static 'img/principal4.webp' %}" alt="4" class="img">
+  <img src="{% static 'img/principal5.jpeg' %}" alt="5" class="img active">
+  <img src="{% static 'img/principal6.webp' %}" alt="6" class="img">
+  <img src="{% static 'img/principal7.jpeg' %}" alt="7" class="img">
+      </div>
+      <div class="nav-principal">
+        <button class="prev-principal"><i class="fas fa-chevron-left"></i></button>
+        <button class="next-principal"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <h3>Descubre Ecuador</h3>
+    <p>Desde la majestuosidad de los Andes hasta la biodiversidad de la Amazonía, pasando por las playas del Pacífico y las islas Galápagos, Ecuador te espera con los brazos abiertos.</p>
+
+<script>
+  const slides = document.querySelectorAll('.slides-principal .img');
+  let current = 0;
+  function showSlide(idx) {
+    slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+  }
+  document.querySelector('.prev-principal').onclick = function() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  };
+  setInterval(function() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }, 5000);
+  
+  document.querySelector('.next-principal').onclick = function() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  };
+  showSlide(current);
+</script>
+
+<div>
+  <h3>Nuestras Ofertas</h3>
+  <p>Explora nuestros paquetes turísticos y encuentra la aventura perfecta para ti.</p>
+  <a href="#" class="boton">Ver Paquetes</a>
+</div>
+<div >
+  <h3>Nuestros Servicios</h3>
+  <ul>
+    <li>Paquetes turísticos todo incluido</li>
+    <li>Guías certificados</li>
+    <li>Reservas de transporte y hospedaje</li>
+    <li>Planes personalizados</li>
+  </ul>
+</div>
+</section>
+</main>
+
+<div id="footer-container"></div>
+<div id="modal-container"></div>
+
+</body>
+<script src="{% static 'js/layout.js' %}"></script>
+<script src="{% static 'js/carrito.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
+</html>
