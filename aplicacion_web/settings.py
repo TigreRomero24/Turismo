@@ -78,13 +78,13 @@ WSGI_APPLICATION = 'aplicacion_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='Pagina'),
-        'USER': config('DB_USER', default='usuario1'),
-        'PASSWORD': config('DB_PASSWORD', default='nuevo0'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        'NAME': 'Pagina',
+        'USER': 'usuario1',
+        'PASSWORD': 'nuevo',
+        'HOST': 'localhost',
+        'PORT': '5432',
         'OPTIONS': {
-            'sslmode': config('PGSSLMODE', default='disable'),
+            'sslmode': 'disable',
         },
     }
 }
