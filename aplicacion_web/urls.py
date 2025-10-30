@@ -1,0 +1,38 @@
+"""
+URL configuration for aplicacion_web project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from aplicaciones.amazonia.views import *
+from aplicaciones.costa.views import *
+from aplicaciones.galapagos.views import *
+from aplicaciones.sierra.views import *
+from aplicaciones.usuarios.views import *
+
+urlpatterns = [
+    path('', inicio.as_view(), name='inicio'),
+    path('admin/', admin.site.urls),
+    path('historia/', historia.as_view(), name='historia'),
+    path('amazonia/', AmazoniaView.as_view(), name='amazonia'),
+    path('costa/', CostaView.as_view(), name='costa'),
+    path('galapagos/', GalapagosView.as_view(), name='galapagos'),
+    path('sierra/', SierraView.as_view(), name='sierra'),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
