@@ -36,50 +36,108 @@ async function loadLayouts() {
     }
 }
 
+// Funciones para el manejo del carrito
+function initCarrito() {
+    const btnAbrirCarrito = document.getElementById('abrir-carrito');
+    const btnCerrarCarrito = document.getElementById('cerrar-carrito');
+    const carritoFlotante = document.getElementById('carrito-flotante');
+
+    if (btnAbrirCarrito && btnCerrarCarrito && carritoFlotante) {
+        // Asegurarse de que el carrito esté oculto inicialmente
+        carritoFlotante.style.display = 'none';
+        
+        // Agregar event listener para abrir el carrito
+        btnAbrirCarrito.addEventListener('click', function(e) {
+            e.preventDefault();
+            carritoFlotante.style.display = 'block';
+            actualizarCarrito();
+        });
+
+        // Agregar event listener para cerrar el carrito
+        btnCerrarCarrito.addEventListener('click', function(e) {
+            e.preventDefault();
+            carritoFlotante.style.display = 'none';
+        });
+        
+        // Cerrar el carrito si se hace clic fuera de él
+        document.addEventListener('click', function(e) {
+            if (!carritoFlotante.contains(e.target) && e.target !== btnAbrirCarrito) {
+                carritoFlotante.style.display = 'none';
+            }
+        });
+    } else {
+        console.error('No se encontraron los elementos necesarios para el carrito');
+    }
+}
+
+// Función para actualizar el contenido del carrito
+function actualizarCarrito() {
+    const carritoLista = document.getElementById('carrito-lista');
+    const carritoTotal = document.getElementById('carrito-total');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    if (carritoLista && carritoTotal) {
+        carritoLista.innerHTML = '';
+        let total = 0;
+
+        carrito.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${item.nombre} - $${item.precio}
+                <button onclick="eliminarDelCarrito(${index})">
+                    <i class="fas fa-trash"></i>
+                </button>
+            `;
+            carritoLista.appendChild(li);
+            total += parseFloat(item.precio);
+        });
+
+        carritoTotal.textContent = `Total: $${total.toFixed(2)}`;
+    }
+}
+
+// Función para eliminar items del carrito
+function eliminarDelCarrito(index) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.splice(index, 1);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();
+}
+
 // Las funciones de carga se manejarán en el evento DOMContentLoaded más abajo
 
 // Asegurarse de que los scripts se recarguen después de cargar los layouts
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        // Reinicializar scripts después de cargar los layouts
-        const loginScript = document.querySelector('script[src="js/login.js"]');
-        const carritoScript = document.querySelector('script[src="js/carrito.js"]');
-        
-        if (loginScript) {
-            const newLoginScript = document.createElement('script');
-            newLoginScript.src = loginScript.src;
-            document.body.appendChild(newLoginScript);
-        }
-        
-        if (carritoScript) {
-            const newCarritoScript = document.createElement('script');
-            newCarritoScript.src = carritoScript.src;
-            document.body.appendChild(newCarritoScript);
-        }
-    }, 1000); // Esperar 1 segundo después de cargar los layouts
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     // HEADER
     const headerContainer = document.getElementById('header-container');
     if (headerContainer) {
-        headerContainer.innerHTML = `
-            <button id="abrir-carrito" class="carrito-boton">
-                <i class="fas fa-shopping-cart"></i>
-            </button>
-            <div id="carrito-flotante" class="carrito-caja">
-                <h3>Carrito de paquetes</h3>
-                <ul id="carrito-lista"></ul>
-                <div id="carrito-total" class="carrito-total"></div>
-                <button id="cerrar-carrito">Cerrar</button>
-            </div>
+        // Crear elementos del carrito
+        const carritoButton = document.createElement('button');
+        carritoButton.id = 'abrir-carrito';
+        carritoButton.className = 'carrito-boton';
+        carritoButton.innerHTML = '<i class="fas fa-shopping-cart"></i>';
+
+        const carritoFlotante = document.createElement('div');
+        carritoFlotante.id = 'carrito-flotante';
+        carritoFlotante.className = 'carrito-caja';
+        carritoFlotante.innerHTML = `
+            <h3>Carrito de paquetes</h3>
+            <ul id="carrito-lista"></ul>
+            <div id="carrito-total" class="carrito-total"></div>
+            <button id="cerrar-carrito">Cerrar</button>
+        `;
+
+        // Agregar elementos al header
+        headerContainer.insertBefore(carritoButton, headerContainer.firstChild);
+        headerContainer.insertBefore(carritoFlotante, headerContainer.firstChild);
+        headerContainer.innerHTML += `
             <header>
                 <h1>EcuTuris - Agencia de Turismo</h1>
                 <p>Explora lo mejor de Ecuador: Costa, Sierra, Amazonía y Galápagos</p>
             </header>
             <nav>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="/">Inicio</a></li>
                     <li>
                         <a href="#">Destinos</a>
                         <ul>
@@ -196,4 +254,24 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         document.body.appendChild(registerModalDiv);
     }
+    
+    // Inicializar el carrito después de crear todos los elementos
+    setTimeout(() => {
+        initCarrito();
+        
+        // Reinicializar scripts
+        const scripts = [
+            { src: '/static/js/login.js' },
+            { src: '/static/js/carrito.js' }
+        ];
+
+        scripts.forEach(script => {
+            const oldScript = document.querySelector(`script[src="${script.src}"]`);
+            if (oldScript) {
+                const newScript = document.createElement('script');
+                newScript.src = script.src;
+                document.body.appendChild(newScript);
+            }
+        });
+    }, 500);
 });
