@@ -6,6 +6,7 @@
   <title>Turismo en la Costa</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/map.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -49,7 +50,8 @@
                     <img src="{% static 'img/hotel-montañita1.webp' %}" alt="Dharma Beach Hotel" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Dharma Beach Hotel</h3>
-                      <p class="location">Una cuadra de la playa</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7965.960325738717!2d-80.75774121736683!3d-1.8247403057067517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd4c2a7da67ab%3A0xaf347c89bf9af18b!2sDHARMA%20BEACH!5e0!3m2!1ses!2sec!4v1762312100413!5m2!1ses!2sec')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(43)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price">$110 por noche<br><span class="total">($128 en total)</span></p>
@@ -60,7 +62,8 @@
                     <img src="{% static 'img/hotel-montañita2.webp' %}" alt="ME Hotel in Montañita Estates" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>ME Hotel in Montañita Estates</h3>
-                      <p class="location"> Cerca de del Bar Sirenita</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.7885157591704!2d-80.75348559066057!3d-1.8277070981478514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd4e9dbaa5b8f%3A0x79922039d219ef94!2sMonta%C3%B1ita%20Estates!5e0!3m2!1ses!2sec!4v1762312254493!5m2!1ses!2sec')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.5/10 <span class="review-count">(48)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price">$130 por noche<br><span class="total">($150 en total)</span></p>
@@ -71,7 +74,8 @@
                     <img src="{% static 'img/hotel-montañita3.jpg' %}" alt="Selina Montañita" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Selina Montañita</h3>
-                      <p class="location">Diagonal al comercial Tia</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.7908446562037!2d-80.75573309066058!3d-1.8266581981489176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd4c2982540f9%3A0x3f8d55d5a1419c9f!2sSelina%20Monta%C3%B1ita!5e0!3m2!1ses!2sec!4v1762312502370!5m2!1ses!2sec')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 8.9/10 <span class="review-count">(53)</span></p>
                       <p class="comment">“Muy Bueno”</p>
                       <p class="price">$100 por noche<br><span class="total">($118 en total)</span></p>
@@ -85,7 +89,8 @@
                     <img src="{% static 'img/restaurant-montañita1.jpg' %}" alt="Tiki Limbo" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Tiki Limbo</h3>
-                      <p class="location"> Cerca de del mar </p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.7913023296633!2d-80.75567679066071!3d-1.8264519981491252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd4c2b85589d9%3A0x87628fd0d2845e98!2sTIKI%20LIMBO!5e0!3m2!1ses!2sec!4v1762312689008!5m2!1ses!2sec')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.3/10 <span class="review-count">(40)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price"> Desde $15 por comida</p>
@@ -96,9 +101,10 @@
                     <img src="{% static 'img/restaurant-montañita2.webp' %}" alt="Pigro Montañita" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Pigro Montañita</h3>
-                      <p class="location">Cerca del mar</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63804.660854166796!2d-80.79439322438859!3d-1.8264515224599474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd5be1e317405%3A0x16edaddee47179f3!2sPigro%20al%20Sol%20Monta%C3%B1ita!5e0!3m2!1ses!2sec!4v1762312810999!5m2!1ses!2sec')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(50)</span></p>
-                      <p class="comment">“excelente”</p>
+                      <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $10 por comida</p>
                     </div>
                     <button class="fav-btn">❤️</button>
@@ -106,10 +112,11 @@
                   <div class="card-hotel">
                     <img src="{% static 'img/restaurant-montañita3.jpg' %}" alt="Shankha Sushi & Bar" class="card-hotel-img">
                     <div class="card-body-hotel">
-                      <h3>Shankha Sushi & Bar</h3>
-                      <p class="location">Cerca del mar</p>
-                      <p class="rating">⭐ 9.1/10 <span class="review-count">(45)</span></p>
-                      <p class="comment">“excelente”</p>
+                      <h3> Shankha Sushi & Bar</h3>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.8045824779483!2d-80.7588788906606!3d-1.820458598155182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd4daf76fd83d%3A0xa866b1ec1d155d37!2sShankha%20Sushi%20%26%20Thai!5e0!3m2!1ses!2sec!4v1762313058506!5m2!1ses!2sec')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
+                      <p class="rating">⭐ 9.0/10 <span class="review-count">(43)</span></p>
+                      <p class="comment"> “Excelente”</p>
                       <p class="price"> Desde $10 por comida</p>
                     </div>
                     <button class="fav-btn">❤️</button>
@@ -160,7 +167,8 @@
                     <img src="{% static 'img/hotel-salinas1.jpeg' %}" alt="Barceló Salinas" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Barceló Salinas</h3>
-                      <p class="location">3 cuadra de la playa</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(45)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price">$120 por noche<br><span class="total">($138 en total)</span></p>
@@ -171,7 +179,8 @@
                     <img src="{% static 'img/hotel-salinas2.JPG' %}" alt="Hostal Cocos" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hostal Cocos</h3>
-                      <p class="location"> 2 cuadras del mar</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 8.5/10 <span class="review-count">(48)</span></p>
                       <p class="comment">“Bueno”</p>
                       <p class="price">$85 por noche<br><span class="total">($92 en total)</span></p>
@@ -182,7 +191,8 @@
                     <img src="{% static 'img/hotel-salinas3.jpeg' %}" alt="Blue Bay Hotel" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Blue Bay Hotel</h3>
-                      <p class="location">Diagonal al comercial Tia</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.3/10 <span class="review-count">(65)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$100 por noche<br><span class="total">($118 en total)</span></p>
@@ -196,7 +206,8 @@
                     <img src="{% static 'img/restaurant-salinas1.webp' %}" alt="Big Ralph’s" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Big Ralph’s</h3>
-                      <p class="location">A 150 metros de la playa </p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(41)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price"> Desde $12 por comida</p>
@@ -207,7 +218,8 @@
                     <img src="{% static 'img/restaurant-salinas2.jpeg' %}" alt="Mariscos Azul" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Mariscos Azul</h3>
-                      <p class="location">A 50 metros de la playa</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.5/10 <span class="review-count">(70)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price"> Desde $15 por comida</p>
@@ -218,7 +230,8 @@
                     <img src="{% static 'img/restaurant-salinas3.jpeg' %}" alt="Casa de Mar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Casa de Mar</h3>
-                      <p class="location">A 50 mtros de la playa</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.1/10 <span class="review-count">(40)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price"> Desde $8 por comida</p>
@@ -270,7 +283,8 @@
                     <img src="{% static 'img/hotel-PuertoLopez1.jpg' %}" alt="Hotel Piedra del Mar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hotel Piedra del Mar</h3>
-                      <p class="location">Frente a la Playa</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(70)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price">$80 por noche<br><span class="total">($88 en total)</span></p>
@@ -281,7 +295,8 @@
                     <img src="{% static 'img/hotel-PuertoLopez2.jpg' %}" alt="Hostería Mandála" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hostería Mandála</h3>
-                      <p class="location">100 metros de la playa </p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.5/10 <span class="review-count">(88)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$85 por noche<br><span class="total">($92 en total)</span></p>
@@ -292,7 +307,8 @@
                     <img src="{% static 'img/hotel-PuertoLopez3.jpg' %}" alt="Victor Hugo Hotel" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Victor Hugo Hotel</h3>
-                      <p class="location">Con vista al mar</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.3/10 <span class="review-count">(65)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$95 por noche<br><span class="total">($105 en total)</span></p>
@@ -306,7 +322,8 @@
                     <img src="{% static 'img/restaurant-PuertoLopez1.jpg' %}" alt="Sabor Español" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Sabor Español</h3>
-                      <p class="location">A 100 del muelle turístico </p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(41)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price"> Desde $10 por comida</p>
@@ -317,7 +334,8 @@
                     <img src="{% static 'img/restaurant-PuertoLopez2.jpeg' %}" alt="Bellitalia Puerto López" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Bellitalia Puerto López</h3>
-                      <p class="location">A 150 metros del comercial Tia</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 8.5/10 <span class="review-count">(40)</span></p>
                       <p class="comment">“Bueno”</p>
                       <p class="price"> Desde $7 por comida</p>
@@ -328,7 +346,8 @@
                     <img src="{% static 'img/restaurant-salinas3.jpeg' %}" alt="Café del Mar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Café del Mar</h3>
-                      <p class="location">En la palaya junto al bar Mar Azul</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.openstreetmap.org/export/embed.html?bbox=-80.754,-1.821,-80.749,-1.816&layer=mapnik&marker=-1.818,-80.752')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.1/10 <span class="review-count">(40)</span></p>
                       <p class="comment">“excelente”</p>
                       <p class="price"> Desde $5 por comida</p>
@@ -350,6 +369,28 @@
     </div>
 
 </section>
+
+<script>
+function toggleMapa(button, urlMapa) {
+  const contenedor = button.nextElementSibling;
+  console.log('URL del mapa:', urlMapa);
+
+  if (contenedor.style.display === 'block') {
+    contenedor.style.display = 'none';
+    button.textContent = 'Ver mapa';
+    contenedor.innerHTML = '';
+  } else {
+    contenedor.style.display = 'block';
+    button.textContent = 'Ocultar mapa';
+    contenedor.innerHTML = `
+      <iframe src="${urlMapa}" allowfullscreen loading="lazy"></iframe>
+      <br>
+    `;
+  }
+}
+
+</script>
+
 
 <div id="footer-container"></div>
 <div id="modal-container"></div>

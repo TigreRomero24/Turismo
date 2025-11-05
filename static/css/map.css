@@ -1,0 +1,32 @@
+
+.btn-mapa {
+  background-color: #00897b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-mapa:hover {
+  background-color: #00695c;
+}
+
+.mapa-contenedor {
+  display: none;
+  margin-top: 10px;
+}
+
+.mapa-contenedor iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 200px !important;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+iframe {
+  display: none;
+}
