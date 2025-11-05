@@ -56,18 +56,37 @@
   showSlide(current);
 </script>
 
-<div>
+<div class="ofertas">
   <h3>Nuestras Ofertas</h3>
   <p>Explora nuestros paquetes turísticos y encuentra la aventura perfecta para ti.</p>
-  <a href="#" class="boton">Ver Paquetes</a>
+  <a href="#" class="boton" onclick="toggleSubmenu(event)">Ver Paquetes ▾</a>
+  
+  <!-- Submenú oculto -->
+  <ul id="submenu" class="submenu">
+    <li><a href="{% url 'costa' %}">Costa</a></li>
+    <li><a href="{% url 'sierra' %}">Sierra</a></li>
+    <li><a href="{% url 'amazonia' %}">Amazonía</a></li>
+    <li><a href="{% url 'galapagos' %}">Galápagos</a></li>
+  </ul>
 </div>
-<div >
+
+<script>
+function toggleSubmenu(event) {
+  event.preventDefault();
+  const submenu = document.getElementById("submenu");
+  submenu.classList.toggle("visible");
+}
+</script>
+
+<div class="servicios">
   <h3>Nuestros Servicios</h3>
+</div>
+<div class="servicios-lista">
   <ul>
-    <li>Paquetes turísticos todo incluido</li>
-    <li>Guías certificados</li>
-    <li>Reservas de transporte y hospedaje</li>
-    <li>Planes personalizados</li>
+  <span>Disfruta de nuestros completos paquetes turísticos todo incluido, que abarcan desde alojamiento, alimentación y transporte, hasta actividades recreativas cuidadosamente seleccionadas para brindarte una experiencia única y sin preocupaciones.</span>
+    <li style="margin-left: 40px;">Guías certificados</li>
+    <li style="margin-left: 40px;">Reservas de transporte y hospedaje</li>
+    <li style="margin-left: 40px;">Planes personalizados</li>
   </ul>
 </div>
 </section>

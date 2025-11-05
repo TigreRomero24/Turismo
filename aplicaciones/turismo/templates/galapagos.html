@@ -6,6 +6,7 @@
   <title>Turismo en la Galápagos</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/map.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -48,7 +49,8 @@
                   <img src="{% static 'img/hotel-Isabela1.jpg' %}" alt="Hotel Casa Blanca" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Casa Blanca</h3>
-                    <p class="location">AV Los Flamingos y Puerto Villamil</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+Casa+Blanca+Puerto+Villamil+Isabela&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.7/10 <span class="review-count">(63)</span></p>
                     <p class="comment">"Excelente"</p>
                     <p class="price">$150 por noche<br><span class="total">($155 en total)</span></p>
@@ -59,7 +61,8 @@
                   <img src="{% static 'img/hotel-Isabela2.jpg' %}" alt="Arena Blanca Eco Hotel" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Arena Blanca Eco Hotel</h3>
-                    <p class="location">Av Antonio Gil y Pinguinos.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Arena+Blanca+Eco+Hotel+Puerto+Villamil&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.0/10 <span class="review-count">(68)</span></p>
                     <p class="comment">“Muy Bueno”</p>
                     <p class="price">$95 por noche<br><span class="total">($100 en total)</span></p>
@@ -70,7 +73,8 @@
                   <img src="{% static 'img/hotel-Isabela3.jpg' %}" alt="Eco Hotel Katarma" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Eco Hotel Katarma</h3>
-                    <p class="location">Avenida 16 de Marzo y los cactus barrio loja.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Eco+Hotel+Katarma+Puerto+Villamil&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.3/10 <span class="review-count">(65)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price">$100 por noche<br><span class="total">($118 en total)</span></p>
@@ -81,10 +85,11 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="{% static 'img/restaurant-isabela1.jpg' %}" alt="Darwin's Secret" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-isabela1.jpg' %}" alt="Isabela grill" class="card-hotel-img">
                   <div class="card-body-hotel">
-                    <h3>Darwin's Secret</h3>
-                    <p class="location">Antonio Gil S/N y, 16 de Marzo, Puerto Villamil 200250 Ecuador.</p>
+                    <h3>Isabela grill</h3>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6117.244797419004!2d-90.96783684462211!3d-0.9564659906666109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9aabebdf50589dc9%3A0x38218c922abc1553!2sIsabela%20grill!5e0!3m2!1ses!2sus!4v1762321292265!5m2!1ses!2sus')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.5/10 <span class="review-count">(51)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $10 por comida</p>
@@ -92,10 +97,11 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="{% static 'img/restaurant-isabela2.jpg' %}" alt="Post Office" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-isabela2.jpg' %}" alt="Ramsar Safari" class="card-hotel-img">
                   <div class="card-body-hotel">
-                    <h3>Post Office</h3>
-                    <p class="location">Puerto Villamil.</p>
+                    <h3>Ramsar Safari</h3>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6117.244797419004!2d-90.96783684462211!3d-0.9564659906666109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9aabeb48cb90a00f%3A0xf87ade29d5abe00e!2sRamsar%20Safari!5e0!3m2!1ses!2sus!4v1762321381558!5m2!1ses!2sus')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.8/10 <span class="review-count">(95)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $15 por comida</p>
@@ -106,7 +112,8 @@
                   <img src="{% static 'img/restaurant-isabela3.jpg' %}" alt="EL DESCANSO Marinero" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>EL DESCANSO Marinero</h3>
-                    <p class="location">AV Malecón y Petreles.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=El+Descanso+Marinero+Puerto+Villamil&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.1/10 <span class="review-count">(49)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $12 por comida</p>
@@ -159,7 +166,8 @@
                   <img src="{% static 'img/hotel-cruz1.jpg' %}" alt="Hotel Ninfa" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Ninfa</h3>
-                    <p class="location">Colonos AV Charles Darwin.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+Ninfa+Puerto+Ayora+Santa+Cruz&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.0/10 <span class="review-count">(63)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price">$160 por noche<br><span class="total">($165 en total)</span></p>
@@ -170,7 +178,8 @@
                   <img src="{% static 'img/hotel-cruz2.jpg' %}" alt="Galapagos Morning Glory" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Galapagos Morning Glory</h3>
-                    <p class="location">Av Charles Darwin y Floreana.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Galapagos+Morning+Glory+Hotel+Puerto+Ayora&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 8.7/10 <span class="review-count">(68)</span></p>
                     <p class="comment">“Bueno”</p>
                     <p class="price">$85 por noche<br><span class="total">($92 en total)</span></p>
@@ -181,7 +190,8 @@
                   <img src="{% static 'img/hotel-cruz3.jpg' %}" alt="Hotel Fiesta" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Fiesta</h3>
-                    <p class="location">AV Moises Brito y Puerto Ayora.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+Fiesta+Puerto+Ayora+Santa+Cruz&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.3/10 <span class="review-count">(65)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price">$100 por noche<br><span class="total">($118 en total)</span></p>
@@ -195,7 +205,8 @@
                   <img src="{% static 'img/restaurant-cruz1.jpg' %}" alt="Golden Prague Pub" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Golden Prague Pub</h3>
-                    <p class="location">AV Charles Darwin y Puerto Ayora.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Golden+Prague+Pub+Puerto+Ayora&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.4/10 <span class="review-count">(51)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $12 por comida</p>
@@ -203,10 +214,11 @@
                   <button class="fav-btn">❤️</button>
                 </div>
                 <div class="card-hotel">
-                  <img src="{% static 'img/restaurant-cruz2.jpg' %}" alt="Post Office" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-cruz2.jpg' %}" alt="FRAFRE GASTROBAR" class="card-hotel-img">
                   <div class="card-body-hotel">
-                    <h3>Post Office</h3>
-                    <p class="location">Av. Charles Darwin y Piqueros Dentro del hotel Galapagos Habitat Eco Luxury Hotel.</p>
+                    <h3>FRAFRE GASTROBAR</h3>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15957.935385792805!2d-90.32864332112406!3d-0.7418997384207622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9aaa5d0fddb5fe31%3A0x29abe0069167a6da!2sFRAFRE%20GASTROBAR!5e0!3m2!1ses!2sus!4v1762321555257!5m2!1ses!2sus')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.0/10 <span class="review-count">(75)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $14 por comida</p>
@@ -217,7 +229,8 @@
                   <img src="{% static 'img/restaurant-cruz3.jpg' %}" alt="EL DESCANSO Marinero" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>EL DESCANSO Marinero</h3>
-                    <p class="location">Barrio Punta Estrada Angermeyer Waterfront Inn.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=El+Descanso+Marinero+Puerto+Ayora&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.1/10 <span class="review-count">(49)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $12 por comida</p>
@@ -270,7 +283,8 @@
                   <img src="{% static 'img/hotel-Cristobal1.jpg' %}" alt="Hotel Casa Blanca" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Hotel Casa Blanca</h3>
-                    <p class="location">Avenida Charles darwin y Herman Melville.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+Casa+Blanca+Puerto+Baquerizo+Moreno+San+Cristobal&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.7/10 <span class="review-count">(63)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price">$150 por noche<br><span class="total">($155 en total)</span></p>
@@ -281,7 +295,8 @@
                   <img src="{% static 'img/hotel-Cristobal2.jpg' %}" alt="Arena Blanca Eco Hotel" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Arena Blanca Eco Hotel</h3>
-                    <p class="location">Avenida Quito y Avenida Tulcan.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Arena+Blanca+Eco+Hotel+Puerto+Baquerizo+Moreno&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.0/10 <span class="review-count">(68)</span></p>
                     <p class="comment">“Muy Bueno”</p>
                     <p class="price">$95 por noche<br><span class="total">($100 en total)</span></p>
@@ -292,7 +307,8 @@
                   <img src="{% static 'img/hotel-Cristobal3.jpg' %}" alt="Eco Hotel Katarma" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Eco Hotel Katarma</h3>
-                    <p class="location">Avenida Alsacio Northia, San Cristobal.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Eco+Hotel+Katarma+Puerto+Baquerizo+Moreno&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.3/10 <span class="review-count">(65)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price">$100 por noche<br><span class="total">($118 en total)</span></p>
@@ -303,10 +319,11 @@
               <h4>🍽️Restaurantes recomendados</h4>
               <div class="container-card">
                 <div class="card-hotel">
-                  <img src="{% static 'img/restaurant-Cristobal1.jpg' %}" alt="Darwin's Secret" class="card-hotel-img">
+                  <img src="{% static 'img/restaurant-Cristobal1.jpg' %}" alt="Cabaña Grande" class="card-hotel-img">
                   <div class="card-body-hotel">
-                    <h3>Darwin's Secret</h3>
-                    <p class="location">Isabela Y Charles Darwin Manzana 40 Solar 13 Sector Playa De Oro.</p>
+                    <h3>Cabaña Grande</h3>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.590373012525!2d-89.6130993574799!3d-0.9015418376593346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9000e9e3e655b211%3A0x5ac0126836daadc4!2sCaba%C3%B1a%20Grande!5e0!3m2!1ses!2sus!4v1762321763813!5m2!1ses!2sus')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.5/10 <span class="review-count">(51)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $10 por comida</p>
@@ -317,7 +334,8 @@
                   <img src="{% static 'img/restaurant-Cristobal2.jpg' %}" alt="Post Office" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>Post Office</h3>
-                    <p class="location">Av. Charles Darwin José de Villamil, Puerto Baquerizo Moreno.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Post+Office+Puerto+Baquerizo+Moreno+San+Cristobal&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.8/10 <span class="review-count">(95)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $15 por comida</p>
@@ -328,7 +346,8 @@
                   <img src="{% static 'img/restaurant-Cristobal3.jpg' %}" alt="El Descanso Marinero" class="card-hotel-img">
                   <div class="card-body-hotel">
                     <h3>El Descanso Marinero</h3>
-                    <p class="location">Calle Alsacio Northia y Espanola, Puerto Baquerizo Moreno.</p>
+                    <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=El+Descanso+Marinero+Puerto+Baquerizo+Moreno&output=embed')">Ver mapa</button>
+                    <div class="mapa-contenedor"></div>
                     <p class="rating">⭐ 9.1/10 <span class="review-count">(49)</span></p>
                     <p class="comment">“Excelente”</p>
                     <p class="price"> Desde $12 por comida</p>
@@ -349,6 +368,26 @@
         </div>
     </div>
 </section>
+
+<script>
+function toggleMapa(button, urlMapa) {
+  const contenedor = button.nextElementSibling;
+  console.log('URL del mapa:', urlMapa);
+
+  if (contenedor.style.display === 'block') {
+    contenedor.style.display = 'none';
+    button.textContent = 'Ver mapa';
+    contenedor.innerHTML = '';
+  } else {
+    contenedor.style.display = 'block';
+    button.textContent = 'Ocultar mapa';
+    contenedor.innerHTML = `
+      <iframe src="${urlMapa}" allowfullscreen loading="lazy"></iframe>
+      <br>
+    `;
+  }
+}
+</script>
 
 <div id="footer-container"></div>
 <div id="modal-container"></div>
