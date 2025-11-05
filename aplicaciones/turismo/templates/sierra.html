@@ -6,6 +6,7 @@
   <title>Turismo en la Sierra</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/map.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -48,7 +49,8 @@
                     <img src="{% static 'img/hotel-Quito1.jpg' %}" alt="Hotel Plaza Grande" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hotel Plaza Grande</h3>
-                      <p class="location">Ubicado en el centro historico de Quito</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+Plaza+Grande+Quito&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.8/10 <span class="review-count">(70)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$100 por noche<br><span class="total">($108 en total)</span></p>
@@ -59,7 +61,8 @@
                     <img src="{% static 'img/hotel-Quito2.jpg' %}" alt="Casa Gangotena" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Casa Gangotena</h3>
-                      <p class="location">En la plaza San Francisco</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Casa+Gangotena+Quito&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.7/10 <span class="review-count">(88)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$95 por noche<br><span class="total">($100 en total)</span></p>
@@ -70,7 +73,8 @@
                     <img src="{% static 'img/hotel-Quito3.jpg' %}" alt="Swissôtel Quito" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Swissôtel Quito</h3>
-                      <p class="location">Avenida 12 de Octubre 1820 y Luis Cordero</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Swissotel+Quito&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.7/10 <span class="review-count">(75)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$95 por noche<br><span class="total">($105 en total)</span></p>
@@ -84,7 +88,8 @@
                     <img src="{% static 'img/restaurant-Quito1.jpg' %}" alt="Zazu" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Zazu</h3>
-                      <p class="location">Mariano Aguilera 331 y Martín Carrión La Pradera</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Zazu+Quito+Mariano+Aguilera&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(41)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $10 por comida</p>
@@ -95,7 +100,8 @@
                     <img src="{% static 'img/restaurant-Quito2.jpg' %}" alt="El Ventanal" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>El Ventanal</h3>
-                      <p class="location">Centro Histórico - Quito Calles Carchi y Nicaragua</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=El+Ventanal+Quito&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.5/10 <span class="review-count">(90)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $15 por comida</p>
@@ -106,7 +112,8 @@
                     <img src="{% static 'img/restaurant-Quito3.jpg' %}" alt="Café Mosaico" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Café Mosaico</h3>
-                      <p class="location">Manuel Samaniego N8-95 y Antepara.</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Cafe+Mosaico+Quito&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.7/10 <span class="review-count">(90)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $15 por comida</p>
@@ -159,7 +166,8 @@
                     <img src="{% static 'img/hotel-banos1.webp' %}" alt="Samari Spa Resort" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Samari Spa Resort</h3>
-                      <p class="location">A 2km del mercado de artesanía</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Samari+Spa+Resort+Ba%C3%B1os+Ecuador&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.3/10 <span class="review-count">(50)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$80 por noche<br><span class="total">($88 en total)</span></p>
@@ -170,7 +178,8 @@
                     <img src="{% static 'img/hotel-banos2.jpeg' %}" alt="La Floresta Hotel" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>La Floresta Hotel</h3>
-                      <p class="location">A 3 minutos a pie de la zona comercial y la plaza principal</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+La+Floresta+Ba%C3%B1os+Ecuador&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.2/10 <span class="review-count">(58)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$95 por noche<br><span class="total">($100 en total)</span></p>
@@ -181,7 +190,8 @@
                     <img src="{% static 'img/hotel-banos3.jpg' %}" alt="Luna Volcán Adventure Spa" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Luna Volcán Adventure Spa</h3>
-                      <p class="location">A 1.000 metros del centro de Baños de Agua Santa, cerca del volcán Tungurahua</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Luna+Volcan+Adventure+Spa+Ba%C3%B1os+Ecuador&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.7/10 <span class="review-count">(75)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$115 por noche<br><span class="total">($125 en total)</span></p>
@@ -195,7 +205,8 @@
                     <img src="{% static 'img/restaurant-bano1.jpg' %}" alt="Casa Hood" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Casa Hood</h3>
-                      <p class="location">Atras del Supermercado, Luis A. Martínez</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Casa+Hood+Ba%C3%B1os+Ecuador&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(41)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $10 por comida</p>
@@ -206,7 +217,8 @@
                     <img src="{% static 'img/restaurant-bano2.jpg' %}" alt="Leoni Pizzería" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Leoni Pizzería</h3>
-                      <p class="location">Thomas Halflans y Oriente, Baños de Agua Santa</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Leoni+Pizzeria+Ba%C3%B1os+Ecuador&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.4/10 <span class="review-count">(90)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $13 por comida</p>
@@ -217,7 +229,8 @@
                     <img src="{% static 'img/restaurant-bano3.jpg' %}" alt="Café del Cielo" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Café del Cielo</h3>
-                      <p class="location">Luna Volcán", a unos 13 minutos del centro de Baños.</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Cafe+del+Cielo+Banos+Ecuador&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.8/10 <span class="review-count">(90)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $15 por comida</p>
@@ -270,7 +283,8 @@
                     <img src="{% static 'img/hotel-cuenca1.jpg' %}" alt="Hotel Boutique Santa Lucia" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hotel Boutique Santa Lucia</h3>
-                      <p class="location">En el centro histórico de Cuenca, específicamente en una antigua casa republicana de 1859.</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+Boutique+Santa+Lucia+Cuenca&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.3/10 <span class="review-count">(50)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$90 por noche<br><span class="total">($98 en total)</span></p>
@@ -281,7 +295,8 @@
                     <img src="{% static 'img/hotel-cuenca2.webp' %}" alt="Mansion Alcazar" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Mansion Alcazar</h3>
-                      <p class="location">Cerca de lugares como la Iglesia de Santo Domingo y el Museo Catedral Vieja</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Mansion+Alcazar+Cuenca&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.2/10 <span class="review-count">(58)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$95 por noche<br><span class="total">($100 en total)</span></p>
@@ -292,7 +307,8 @@
                     <img src="{% static 'img/hotel-cuenca3.jpg' %}" alt="Hotel Victoria" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Hotel Victoria</h3>
-                      <p class="location">en el centro histórico de la ciudad, a orillas del río Tomebamba</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Hotel+Victoria+Cuenca&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.7/10 <span class="review-count">(75)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price">$115 por noche<br><span class="total">($125 en total)</span></p>
@@ -306,7 +322,8 @@
                     <img src="{% static 'img/restaurant-cuenca1.jpg' %}" alt="Raymipampa" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Raymipampa</h3>
-                      <p class="location">Gran Colombia 11-78 y Tarqui, en el centro de Cuenca</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Raymipampa+Cuenca&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.0/10 <span class="review-count">(41)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $10 por comida</p>
@@ -317,7 +334,8 @@
                     <img src="{% static 'img/restaurant-cuenca2.jpeg' %}" alt="Tiesto’s" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>Tiesto’s</h3>
-                      <p class="location">Juan Jaramillo 4-89 y Mariano Cueva, Juan Jaramillo 4-89</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=Tiesto%27s+Cuenca&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.4/10 <span class="review-count">(90)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $13 por comida</p>
@@ -328,7 +346,8 @@
                     <img src="{% static 'img/restaurant-cuenca3.jpg' %}" alt="El Mercado" class="card-hotel-img">
                     <div class="card-body-hotel">
                       <h3>El Mercado</h3>
-                      <p class="location">Calle Larga 8 - 27 y Luis Cordero.</p>
+                      <button class="btn-mapa" onclick="toggleMapa(this, 'https://www.google.com/maps?q=El+Mercado+Cuenca+Ecuador&output=embed')">Ver mapa</button>
+                      <div class="mapa-contenedor"></div>
                       <p class="rating">⭐ 9.8/10 <span class="review-count">(90)</span></p>
                       <p class="comment">“Excelente”</p>
                       <p class="price"> Desde $15 por comida</p>
@@ -350,6 +369,26 @@
     </div>
 
 </section>
+
+<script>
+function toggleMapa(button, urlMapa) {
+  const contenedor = button.nextElementSibling;
+  console.log('URL del mapa:', urlMapa);
+
+  if (contenedor.style.display === 'block') {
+    contenedor.style.display = 'none';
+    button.textContent = 'Ver mapa';
+    contenedor.innerHTML = '';
+  } else {
+    contenedor.style.display = 'block';
+    button.textContent = 'Ocultar mapa';
+    contenedor.innerHTML = `
+      <iframe src="${urlMapa}" allowfullscreen loading="lazy"></iframe>
+      <br>
+    `;
+  }
+}
+</script>
 
 <div id="footer-container"></div>
 <div id="modal-container"></div>
