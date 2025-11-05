@@ -36,11 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aplicaciones.amazonia',
-    'aplicaciones.costa',
-    'aplicaciones.galapagos',
-    'aplicaciones.sierra',
-    'aplicaciones.usuarios',
+    'aplicaciones.turismo',
 ]
 
 MIDDLEWARE = [
