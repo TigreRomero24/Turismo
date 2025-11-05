@@ -34,11 +34,36 @@ document.querySelectorAll('.carrusel-js').forEach(function(carrusel) {
 
 // --- Carrito flotante con localStorage ---
 
-// Agregar paquete al carrito
+// Agregar paquete al carrito y enviar reserva al servidor Django
+
 function agregarAlCarrito(paquete) {
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   carrito.push(paquete);
   localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // --- Enviar reserva al servidor Django ---
+  const currentUser = localStorage.getItem('currentUser');
+  if (currentUser) {
+    fetch('/turismo/api/registrar_reserva/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: currentUser,
+        lugar: paquete.nombre,
+        total: paquete.precio,
+        cantidad: 1
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        console.log('Reserva registrada en Django:', data.message);
+      } else {
+        console.error('Error al registrar reserva:', data.message);
+      }
+    })
+    .catch(err => console.error('Error:', err));
+  }
 }
 
 // Mostrar el carrito flotante

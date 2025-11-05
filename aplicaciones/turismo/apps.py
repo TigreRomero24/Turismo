@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CostaConfig(AppConfig):
+class TurismoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'aplicaciones.costa'
+    name = 'turismo'

@@ -52,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Agregar nuevo usuario
         usuarios.push({ username, password });
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        fetch('/api/registrar_usuario/', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username: username, password: password})
+        });
+        
         return { success: true, message: 'Usuario registrado exitosamente' };
     }
 

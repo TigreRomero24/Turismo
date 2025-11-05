@@ -18,20 +18,20 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from aplicaciones.amazonia.views import *
-from aplicaciones.costa.views import *
-from aplicaciones.galapagos.views import *
-from aplicaciones.sierra.views import *
-from aplicaciones.usuarios.views import *
+from aplicaciones.turismo.views import *
 
 urlpatterns = [
-    path('', inicio.as_view(), name='inicio'),
+    path('', IndexView.as_view(), name='inicio'),
     path('admin/', admin.site.urls),
-    path('historia/', historia.as_view(), name='historia'),
+    path('historia/', HistoriaView.as_view(), name='historia'),
     path('amazonia/', AmazoniaView.as_view(), name='amazonia'),
     path('costa/', CostaView.as_view(), name='costa'),
     path('galapagos/', GalapagosView.as_view(), name='galapagos'),
     path('sierra/', SierraView.as_view(), name='sierra'),
+
+    # API 
+    path('api/registrar_reserva/', registrar_reserva, name='registrar_reserva'),
+    path('api/registrar_usuario/', registrar_usuario, name='registrar_usuario'),
 ]
 
 if settings.DEBUG:
