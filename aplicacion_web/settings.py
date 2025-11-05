@@ -74,7 +74,14 @@ WSGI_APPLICATION = 'aplicacion_web.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'turismo_uvms',
+        'USER': 'turismo_uvms_user',
+        'PASSWORD': '0Mh7kG9S1rjy0FHdkiymY1nsgAX5sSfn',
+        'HOST': 'dpg-d441s5qli9vc73djuk3g-a.virginia-postgres.render.com',
+        'PORT': '5432',
+    }
 }
 
 
