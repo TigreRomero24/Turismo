@@ -63,9 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Función para verificar credenciales
-    function verificarCredenciales(username, password) {
-        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        return usuarios.find(u => u.username === username && u.password === password);
+    async function verificarCredenciales(username, password) {
+        const response = await fetch('/api/login_usuario/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+        });
+        const data = await response.json();
+        return data.success; // true o false
     }
 
 // Función para mostrar menú de usuario
@@ -136,7 +141,7 @@ function toggleRegistroButton(mostrar) {
             usernameError.textContent = '';
             passwordError.textContent = '';
 
-            // Validaciones
+            // Validaciones básicas
             if (username.length < 3) {
                 usernameError.textContent = 'El usuario debe tener al menos 3 caracteres';
                 return false;
@@ -146,15 +151,33 @@ function toggleRegistroButton(mostrar) {
                 return false;
             }
 
-            // Verificar credenciales
-            if (verificarCredenciales(username, password)) {
-                localStorage.setItem('currentUser', username);
-                loginModal.style.display = 'none';
-                showUserMenu(username);
-                toggleRegistroButton(false);
-            } else {
-                passwordError.textContent = 'Usuario o contraseña incorrectos';
-            }
+            // Llamar al backend de Django
+            (async () => {
+                try {
+                    const response = await fetch('/api/verificar_usuario/', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ username, password })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        // Guardar usuario actual (persistente hasta que cierre sesión)
+                        localStorage.setItem('currentUser', username);
+
+                        // Cerrar modal y mostrar menú de usuario
+                        loginModal.style.display = 'none';
+                        showUserMenu(username);
+                        toggleRegistroButton(false);
+                    } else {
+                        passwordError.textContent = 'Usuario o contraseña incorrectos';
+                    }
+                } catch (error) {
+                    console.error('Error al verificar usuario:', error);
+                    passwordError.textContent = 'Error en el servidor. Intenta más tarde.';
+                }
+            })();
         };
     }
 

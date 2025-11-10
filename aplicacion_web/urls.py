@@ -32,6 +32,7 @@ urlpatterns = [
     # API 
     path('api/registrar_reserva/', registrar_reserva, name='registrar_reserva'),
     path('api/registrar_usuario/', registrar_usuario, name='registrar_usuario'),
+    path('api/login_usuario/', login_usuario, name='login_usuario'),
 ]
 
 if settings.DEBUG:

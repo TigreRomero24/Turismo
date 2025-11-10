@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 from .models import Lugar, Reserva
 import json
 from django.views.generic import TemplateView
@@ -15,6 +16,20 @@ def registrar_usuario(request):
             User.objects.create_user(username=username, password=password)
             return JsonResponse({'success': True})
         return JsonResponse({'success': False, 'message': 'Usuario ya existe'})
+
+@csrf_exempt
+def login_usuario(request):
+    if request.method == 'POST':
+        data = json.loads(request.body.decode('utf-8'))
+        username = data.get('username')
+        password = data.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            return JsonResponse({'success': True, 'message': 'Inicio de sesión exitoso'})
+        else:
+            return JsonResponse({'success': False, 'message': 'Credenciales inválidas'})
+    return JsonResponse({'success': False, 'message': 'Método no permitido'})
+
 
 @csrf_exempt
 def registrar_reserva(request):
