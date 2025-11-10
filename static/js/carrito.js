@@ -51,7 +51,7 @@ function agregarAlCarrito(paquete) {
         username: currentUser,
         lugar: paquete.nombre,
         total: paquete.precio,
-        cantidad: 1
+        cantidad: 4
       })
     })
     .then(response => response.json())
