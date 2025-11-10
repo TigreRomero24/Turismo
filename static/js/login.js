@@ -154,7 +154,7 @@ function toggleRegistroButton(mostrar) {
             // Llamar al backend de Django
             (async () => {
                 try {
-                    const response = await fetch('/api/verificar_usuario/', {
+                    const response = await fetch('/api/login_usuario/', {
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({ username, password })
