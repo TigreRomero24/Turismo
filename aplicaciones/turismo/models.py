@@ -21,3 +21,4 @@ class Reserva(models.Model):
 
     def __str__(self):
         return f"Reserva de {self.usuario.username} - {self.lugar.nombre}"
+

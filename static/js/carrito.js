@@ -44,7 +44,7 @@ function agregarAlCarrito(paquete) {
   // --- Enviar reserva al servidor Django ---
   const currentUser = localStorage.getItem('currentUser');
   if (currentUser) {
-    fetch('/turismo/api/registrar_reserva/', {
+    fetch('/api/registrar_reserva/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
